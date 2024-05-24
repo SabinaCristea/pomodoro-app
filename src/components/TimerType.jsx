@@ -12,8 +12,8 @@ function TimerType() {
   const inactiveStyle = "bg-transparent text-lightGrey opacity-50";
 
   return (
-    <div>
-      <div className="flex bg-dark p-[0.7rem] rounded-[50rem]">
+    <div className="mb-[4.5rem] z-20 flex justify-center">
+      <div className="inline-flex bg-dark p-[0.7rem] rounded-[50rem] justify-center ">
         <Button
           onClick={() => handleActiveButton("pomodoro")}
           className={activeButton === "pomodoro" ? activeStyle : inactiveStyle}

@@ -17,6 +17,14 @@ export default {
         white: "#ffffff",
         egg: "#eff1fa",
         dark: "#161932",
+        purpleGr: "#2E325A",
+        purpleSh: "#272C5A",
+      },
+      backgroundImage: {
+        gradient: "linear-gradient(315deg, #2E325A 0%, #0E112A 100%)",
+      },
+      boxShadow: {
+        custom: "-50px -50px 100px 0px #272C5A, 50px 50px 100px 0px #121530",
       },
     },
   },
