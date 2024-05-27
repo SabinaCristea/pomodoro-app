@@ -16,23 +16,25 @@ function TimerType() {
       <div className="inline-flex bg-dark p-[0.7rem] rounded-[50rem] justify-center ">
         <Button
           onClick={() => handleActiveButton("pomodoro")}
-          className={activeButton === "pomodoro" ? activeStyle : inactiveStyle}
+          className={`${
+            activeButton === "pomodoro" ? activeStyle : inactiveStyle
+          } px-[2.5rem] py-[1.5rem]`}
         >
           pomodoro
         </Button>
         <Button
           onClick={() => handleActiveButton("short break")}
-          className={
+          className={`${
             activeButton === "short break" ? activeStyle : inactiveStyle
-          }
+          } px-[2.5rem] py-[1.5rem]`}
         >
           short break
         </Button>
         <Button
           onClick={() => handleActiveButton("long break")}
-          className={
+          className={`${
             activeButton === "long break" ? activeStyle : inactiveStyle
-          }
+          } px-[2.5rem] py-[1.5rem]`}
         >
           long break
         </Button>

@@ -1,7 +1,7 @@
-function SettingsBtn() {
+function SettingsBtn({ onClick }) {
   return (
     <div className="flex justify-center">
-      <button>
+      <button onClick={onClick}>
         <img
           src="../public/assets/icon-settings.svg"
           alt="Settings icon"
