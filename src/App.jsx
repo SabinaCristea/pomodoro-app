@@ -14,7 +14,7 @@ function App() {
       <TimerType />
       <Timer />
       <SettingsBtn onClick={() => setShowSettings((prev) => !prev)} />
-      {showSettings && <SettingsModal />}
+      {showSettings && <SettingsModal onClick={() => setShowSettings(false)} />}
     </div>
   );
 }

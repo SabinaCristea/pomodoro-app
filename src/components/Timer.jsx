@@ -12,7 +12,7 @@ function Timer() {
           <div className="flex flex-col items-center justify-center absolute">
             <CircularProgressbarWithChildren
               value={100}
-              strokeWidth={4}
+              strokeWidth={3}
               minValue={0}
               maxValue={100}
               className="w-[34rem] h-[34rem]"
