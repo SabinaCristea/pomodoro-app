@@ -4,11 +4,25 @@ import CustomInput from "./CustomInput";
 import { useState } from "react";
 import FontSetting from "./FontSetting";
 import ColorSetting from "./ColorSetting";
+import { useSettings } from "../context/SettingsContext";
 
 function SettingsModal({ onClick }) {
-  const [pomodoro, setPomodoro] = useState(25);
-  const [shortBreak, setShortBreak] = useState(5);
-  const [longBreak, setLongBreak] = useState(15);
+  const { state, dispatch } = useSettings();
+  const [pomodoro, setPomodoro] = useState(state.timers.normal / 60);
+  const [shortBreak, setShortBreak] = useState(state.timers.shortPause / 60);
+  const [longBreak, setLongBreak] = useState(state.timers.longPause / 60);
+
+  const handleApply = () => {
+    dispatch({
+      type: "SET_TIMERS",
+      payload: {
+        normal: pomodoro * 60,
+        shortPause: shortBreak * 60,
+        longPause: longBreak * 60,
+      },
+    });
+    onClick();
+  };
 
   return createPortal(
     <div className="modalContainer bg-white flex flex-col fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[54rem] h-[46.4rem] z-[999] rounded-[2.5rem] pt-[3.4rem] pb-[5.9rem] ">
@@ -17,7 +31,7 @@ function SettingsModal({ onClick }) {
           Settings
         </h1>
         <button onClick={onClick}>
-          <img src="../public/assets/icon-close.svg" alt="Close svg icon" />
+          <img src="/assets/icon-close.svg" alt="Close svg icon" />
         </button>
       </div>
 
@@ -46,7 +60,10 @@ function SettingsModal({ onClick }) {
       <FontSetting />
       <ColorSetting />
       <div className="pr-[3.8rem] pl-[4rem] flex items-center justify-center absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[50%]">
-        <Button className="bg-red px-[4.7rem] py-[1.6rem] text-[1.6rem] cursor-pointer">
+        <Button
+          className="bg-red px-[4.7rem] py-[1.6rem] text-[1.6rem] cursor-pointer"
+          onClick={handleApply}
+        >
           Apply
         </Button>
       </div>

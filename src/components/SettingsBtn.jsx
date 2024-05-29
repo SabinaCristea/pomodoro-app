@@ -3,7 +3,7 @@ function SettingsBtn({ onClick }) {
     <div className="flex justify-center">
       <button onClick={onClick}>
         <img
-          src="../public/assets/icon-settings.svg"
+          src="/assets/icon-settings.svg"
           alt="Settings icon"
           className="opacity-50"
         />

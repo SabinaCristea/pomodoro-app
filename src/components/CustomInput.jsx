@@ -28,10 +28,7 @@ function CustomInput({ label, value, onChange }) {
                 })
               }
             >
-              <img
-                src="../public/assets/icon-arrow-up.svg"
-                alt="Svg arrow up"
-              />
+              <img src="/assets/icon-arrow-up.svg" alt="Svg arrow up" />
             </button>
             <button
               type="button"
@@ -41,10 +38,7 @@ function CustomInput({ label, value, onChange }) {
                 })
               }
             >
-              <img
-                src="../public/assets/icon-arrow-down.svg"
-                alt="Svg arrow down"
-              />
+              <img src="/assets/icon-arrow-down.svg" alt="Svg arrow down" />
             </button>
           </div>
         </div>
