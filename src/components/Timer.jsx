@@ -10,6 +10,7 @@ function Timer() {
   const { state } = useSettings();
   const [timeLeft, setTimeLeft] = useState(state.activeTimer.duration);
   const [isActive, setIsActive] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     setTimeLeft(state.activeTimer.duration);
@@ -47,10 +48,19 @@ function Timer() {
     }
   };
 
+  const baseStyle = {
+    fontFamily: state.font,
+    color: "lightGray",
+  };
+
+  const hoverStyle = {
+    color: state.themeColor,
+  };
+
   return (
     <div className="mb-[6.3rem]">
       <div
-        className="outCircle flex items-center justify-center w-[41rem] h-[41rem] shrink-0 rounded-full bg-gradient shadow-custom z-0"
+        className="outCircle flex items-center justify-center w-[41rem] h-[41rem] shrink-0 rounded-full bg-gradient shadow-custom z-0 cursor-pointer"
         onClick={handleClick}
       >
         <div className="inCircle relative flex items-center justify-center w-[36.6rem] h-[36.6rem] rounded-full bg-dark">
@@ -66,14 +76,24 @@ function Timer() {
                 trailColor: "transparent",
               })}
             >
-              <div className="text-lightGray text-center text-[10rem] font-bold">
+              <div
+                className={`text-lightGray text-center text-[10rem] ${
+                  state.font === "Space Mono" ? "tracking-[-1rem]" : "font-bold"
+                } ${state.font === "Kumbh Sans" ? "tracking-[-0.5rem]" : ""}`}
+                style={{ fontFamily: state.font }}
+              >
                 {`${Math.floor(timeLeft / 60)
                   .toString()
                   .padStart(2, "0")}:${(timeLeft % 60)
                   .toString()
                   .padStart(2, "0")}`}
               </div>
-              <div className="text-lightGray text-[1.6rem] uppercase font-bold tracking-[1.5rem] text-center place-self-center pl-[1rem]">
+              <div
+                className={`text-lightGray text-[1.6rem] uppercase font-bold tracking-[1.5rem] text-center place-self-center pl-[1rem]`}
+                style={isHovered ? { ...baseStyle, ...hoverStyle } : baseStyle}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
                 {timeLeft === 0 ? "restart" : isActive ? "pause" : "start"}
               </div>
             </CircularProgressbarWithChildren>

@@ -9,7 +9,7 @@ const initialState = {
     longPause: 15 * 60,
   },
   themeColor: "#f87070",
-  font: "sans",
+  font: "Kumbh Sans",
   activeTimer: { type: "pomodoro", duration: 25 * 60 },
 };
 

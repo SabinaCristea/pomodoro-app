@@ -5,7 +5,7 @@ function SettingsBtn({ onClick }) {
         <img
           src="/assets/icon-settings.svg"
           alt="Settings icon"
-          className="opacity-50"
+          className="opacity-50 hover:opacity-100"
         />
       </button>
     </div>

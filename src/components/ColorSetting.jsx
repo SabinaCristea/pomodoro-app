@@ -1,40 +1,51 @@
 import { useSettings } from "../context/SettingsContext";
 
-function ColorSetting() {
-  const { state, dispatch } = useSettings();
-
-  const handleColorChange = (color) => {
-    dispatch({ type: "SET_THEME_COLOR", payload: color });
-  };
+function ColorSetting({ selectedColor, setSelectedColor }) {
+  const { state } = useSettings();
+  const red = "#f87070";
+  const cian = "#70f3f8";
+  const pink = "#d881f8";
 
   return (
     <div className="settingColorContainer pr-[3.8rem] pl-[4rem] pt-[2.4rem] ">
       <div className="flex justify-between items-center ">
-        <h2 className="text-dark font-sans text-[1.3rem] font-bold tracking-[0.5rem] uppercase">
+        <h2
+          className="text-dark text-[1.3rem] font-bold tracking-[0.5rem] uppercase"
+          style={{ fontFamily: state.font }}
+        >
           color
         </h2>
         <div className="flex gap-[1.6rem]">
           <button
-            className="w-[4rem] h-[4rem] rounded-full bg-red flex items-center justify-center"
-            onClick={() => handleColorChange("#f87070")}
+            className={`w-[4rem] h-[4rem] rounded-full bg-red flex items-center justify-center ${
+              selectedColor !== red &&
+              "hover:ring-1 hover:ring-egg hover:ring-offset-4"
+            }`}
+            onClick={() => setSelectedColor(red)}
           >
-            {state.themeColor === "#f87070" && (
+            {selectedColor === red && (
               <img src="../public/assets/icon-checked.svg" alt="" />
             )}
           </button>
           <button
-            className="w-[4rem] h-[4rem] rounded-full bg-cian flex items-center justify-center"
-            onClick={() => handleColorChange("#70f3f8")}
+            className={`w-[4rem] h-[4rem] rounded-full bg-cian flex items-center justify-center ${
+              selectedColor !== cian &&
+              "hover:ring-1 hover:ring-egg hover:ring-offset-4"
+            }`}
+            onClick={() => setSelectedColor(cian)}
           >
-            {state.themeColor === "#70f3f8" && (
+            {selectedColor === cian && (
               <img src="../public/assets/icon-checked.svg" alt="" />
             )}
           </button>
           <button
-            className="w-[4rem] h-[4rem] rounded-full bg-pink flex items-center justify-center"
-            onClick={() => handleColorChange("#d881f8")}
+            className={`w-[4rem] h-[4rem] rounded-full bg-pink flex items-center justify-center ${
+              selectedColor !== pink &&
+              "hover:ring-1 hover:ring-egg hover:ring-offset-4"
+            }`}
+            onClick={() => setSelectedColor(pink)}
           >
-            {state.themeColor === "#d881f8" && (
+            {selectedColor === pink && (
               <img src="../public/assets/icon-checked.svg" alt="" />
             )}
           </button>
