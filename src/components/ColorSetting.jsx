@@ -24,7 +24,7 @@ function ColorSetting({ selectedColor, setSelectedColor }) {
             onClick={() => setSelectedColor(red)}
           >
             {selectedColor === red && (
-              <img src="../public/assets/icon-checked.svg" alt="" />
+              <img src="/assets/icon-checked.svg" alt="" />
             )}
           </button>
           <button
@@ -35,7 +35,7 @@ function ColorSetting({ selectedColor, setSelectedColor }) {
             onClick={() => setSelectedColor(cian)}
           >
             {selectedColor === cian && (
-              <img src="../public/assets/icon-checked.svg" alt="" />
+              <img src="/assets/icon-checked.svg" alt="" />
             )}
           </button>
           <button
@@ -46,7 +46,7 @@ function ColorSetting({ selectedColor, setSelectedColor }) {
             onClick={() => setSelectedColor(pink)}
           >
             {selectedColor === pink && (
-              <img src="../public/assets/icon-checked.svg" alt="" />
+              <img src="/assets/icon-checked.svg" alt="" />
             )}
           </button>
         </div>
