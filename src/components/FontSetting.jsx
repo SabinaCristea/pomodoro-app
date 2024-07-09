@@ -7,10 +7,10 @@ function FontSetting({ selectedFont, setSelectedFont }) {
   const mono = "Space Mono";
 
   return (
-    <div className="settingFontContainer pr-[3.8rem] pl-[4rem] pt-[2.4rem] ">
-      <div className="flex justify-between items-center pb-[2.4rem] border-b">
+    <div className="settingFontContainer pr-[3.8rem] pl-[4rem] pt-[1.8rem] md:pt-[2.4rem] ">
+      <div className="flex justify-between items-center flex-col md:flex-row pb-[2.4rem] border-b">
         <h2
-          className="text-dark text-[1.3rem] font-bold tracking-[0.5rem] uppercase "
+          className="text-dark text-[1.1rem] md:text-[1.3rem] font-bold tracking-[0.5rem] uppercase pb-[1.8rem] md:pb-0"
           style={{ fontFamily: state.font }}
         >
           font

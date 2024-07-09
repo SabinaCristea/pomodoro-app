@@ -9,7 +9,7 @@ function App() {
   const [showSettings, setShowSettings] = useState(false);
 
   return (
-    <div className="flex flex-col align-middle justify-center">
+    <div className="flex flex-col  items-center justify-center">
       <Title />
       <TimerType />
       <Timer />

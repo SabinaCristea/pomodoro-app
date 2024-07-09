@@ -8,7 +8,7 @@ function Button({
 }) {
   return (
     <div
-      className={`${className} text-[1.4rem] font-bold rounded-[100rem] cursor-pointer`}
+      className={`${className} text-[1.2rem] md:text-[1.4rem] font-bold rounded-[100rem] cursor-pointer`}
       onClick={onClick}
       style={style}
       onMouseEnter={onMouseEnter}

@@ -60,24 +60,24 @@ function Timer() {
   return (
     <div className="mb-[6.3rem]">
       <div
-        className="outCircle flex items-center justify-center w-[41rem] h-[41rem] shrink-0 rounded-full bg-gradient shadow-custom z-0 cursor-pointer"
+        className="outCircle flex items-center justify-center w-[30rem] h-[30rem] md:w-[41rem] md:h-[41rem] shrink-0 rounded-full bg-gradient shadow-custom z-0 cursor-pointer"
         onClick={handleClick}
       >
-        <div className="inCircle relative flex items-center justify-center w-[36.6rem] h-[36.6rem] rounded-full bg-dark">
+        <div className="inCircle relative flex items-center justify-center w-[26.7rem] h-[26.7rem] md:w-[36.6rem] md:h-[36.6rem] rounded-full bg-dark">
           <div className="flex flex-col items-center justify-center absolute">
             <CircularProgressbarWithChildren
               value={(timeLeft / state.activeTimer.duration) * 100}
               strokeWidth={3}
               minValue={0}
               maxValue={100}
-              className="w-[34rem] h-[34rem]"
+              className="w-[24.8rem] h-[24.8rem] md:w-[34rem] md:h-[34rem]"
               styles={buildStyles({
                 pathColor: state.themeColor,
                 trailColor: "transparent",
               })}
             >
               <div
-                className={`text-lightGray text-center text-[10rem] ${
+                className={`text-lightGray text-center text-[8rem] md:text-[10rem] ${
                   state.font === "Space Mono" ? "tracking-[-1rem]" : "font-bold"
                 } ${state.font === "Kumbh Sans" ? "tracking-[-0.5rem]" : ""}`}
                 style={{ fontFamily: state.font }}
@@ -89,7 +89,7 @@ function Timer() {
                   .padStart(2, "0")}`}
               </div>
               <div
-                className={`text-lightGray text-[1.6rem] uppercase font-bold tracking-[1.5rem] text-center place-self-center pl-[1rem]`}
+                className={`text-lightGray text-[1.4rem] md:text-[1.6rem] uppercase font-bold tracking-[1.5rem] text-center place-self-center pl-[1rem]`}
                 style={isHovered ? { ...baseStyle, ...hoverStyle } : baseStyle}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}

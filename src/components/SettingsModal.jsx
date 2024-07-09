@@ -38,10 +38,10 @@ function SettingsModal({ onClick }) {
   };
 
   return createPortal(
-    <div className="modalContainer bg-white flex flex-col fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[54rem] h-[46.4rem] z-[999] rounded-[2.5rem] pt-[3.4rem] pb-[5.9rem] ">
-      <div className="headerContainer flex justify-between items-end pb-[3.2rem] border-b border-b-[#E3E1E1] mb-[2.8rem] pr-[3.8rem] pl-[4rem]">
+    <div className="modalContainer bg-white flex flex-col fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[32.7rem] h-[57.5rem] md:w-[54rem] md:h-[46.4rem] z-[999] rounded-[2.5rem] pt-[2.15rem] md:pt-[3.4rem] pb-[5.9rem] ">
+      <div className="headerContainer flex justify-between md:items-end pb-[2.8rem] md:pb-[3.2rem] border-b border-b-[#E3E1E1] mb-[2rem] md:mb-[2.8rem] pr-[2.35rem] md:pr-[3.8rem] pl-[2.35rem] md:pl-[4rem]">
         <h1
-          className="text-dark text-[2.8rem] font-bold leading-normal"
+          className="text-dark text-[2rem] md:text-[2.8rem] font-bold leading-normal"
           style={{ fontFamily: state.font }}
         >
           Settings
@@ -51,14 +51,14 @@ function SettingsModal({ onClick }) {
         </button>
       </div>
 
-      <div className="settingTimesContainer pr-[3.8rem] pl-[4rem] ">
+      <div className="settingTimesContainer pr-[2.35rem]  md:pr-[3.8rem] pl-[2.35rem] md:pl-[4rem] ">
         <h2
-          className="text-dark font-sans text-[1.3rem] font-bold tracking-[0.5rem] uppercase mb-[2.4rem]"
+          className="text-dark font-sans text-[1.3rem] font-bold tracking-[0.5rem] uppercase mb-[2.4rem] text-center md:text-start"
           style={{ fontFamily: state.font }}
         >
           time (minutes)
         </h2>
-        <div className="settingsContainer flex gap-[2rem] pb-[2.4rem] border-b">
+        <div className="settingsContainer flex flex-col md:flex-row gap-[1rem] md:gap-[2rem] pb-[2.4rem] border-b ">
           <CustomInput
             label="pomodoro"
             value={pomodoro}

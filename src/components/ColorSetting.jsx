@@ -7,10 +7,10 @@ function ColorSetting({ selectedColor, setSelectedColor }) {
   const pink = "#d881f8";
 
   return (
-    <div className="settingColorContainer pr-[3.8rem] pl-[4rem] pt-[2.4rem] ">
-      <div className="flex justify-between items-center ">
+    <div className="settingColorContainer pr-[3.8rem] pl-[4rem] pt-[1.8rem] md:pt-[2.4rem] ">
+      <div className="flex justify-between items-center flex-col md:flex-row ">
         <h2
-          className="text-dark text-[1.3rem] font-bold tracking-[0.5rem] uppercase"
+          className="text-dark text-[1.1rem] md:text-[1.3rem] font-bold tracking-[0.5rem] uppercase pb-[1.8rem] md:pb-0"
           style={{ fontFamily: state.font }}
         >
           color

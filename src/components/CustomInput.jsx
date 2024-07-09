@@ -4,11 +4,12 @@ import { useSettings } from "../context/SettingsContext";
 function CustomInput({ label, value, onChange }) {
   const { state } = useSettings();
 
-  const settingStyle = "flex flex-col";
+  const settingStyle =
+    "flex items-center justify-between md:items-start md:flex-col ";
   const labelStyle =
     "text-dark text-[1.2rem] font-bold opacity-[0.4] mb-[0.8rem]";
   const inputStyle =
-    "w-[14rem] h-[4.8rem] rounded-[1rem] bg-egg text-dark text-[1.4rem] font-bold pl-[1.6rem]";
+    "w-[14rem] h-[4rem] md:h-[4.8rem] rounded-[1rem] bg-egg text-dark text-[1.4rem] font-bold pl-[1.6rem]";
 
   return (
     <div>
